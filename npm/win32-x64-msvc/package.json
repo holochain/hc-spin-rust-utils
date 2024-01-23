@@ -1,6 +1,11 @@
 {
   "name": "@holochain/hc-spin-rust-utils-win32-x64-msvc",
   "version": "0.200.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/holochain/hc-spin-rust-utils",
+    "directory": "npm/win32-x64-gnu"
+  },
   "os": [
     "win32"
   ],
