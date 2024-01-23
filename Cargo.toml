@@ -8,8 +8,6 @@ crate-type = ["cdylib"]
 
 [dependencies]
 # We keep those holochain dependencies separate from the root project to avoid irrelevant incompatibilities
-holochain_client = "0.4.5-rc.0"
-holochain_conductor_api = "0.2.4"
 holochain_integrity_types = "0.2.4"
 holochain_types = "0.2.4"
 holochain_zome_types = "0.2.4"
