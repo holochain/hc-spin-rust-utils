@@ -1,5 +1,9 @@
 {
   "name": "@holochain/hc-spin-rust-utils",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/holochain/hc-spin-rust-utils"
+  },
   "version": "0.200.0",
   "main": "index.js",
   "types": "index.d.ts",
