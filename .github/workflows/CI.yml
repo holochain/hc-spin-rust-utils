@@ -37,6 +37,7 @@ jobs:
             target: x86_64-unknown-linux-gnu
             docker: ghcr.io/napi-rs/napi-rs/nodejs-rust:lts-debian
             build: |-
+              sudo apt-get install libssl-dev
               set -e &&
               yarn build --target x86_64-unknown-linux-gnu &&
               strip *.node
@@ -78,9 +79,6 @@ jobs:
         if: matrix.settings.target == 'i686-pc-windows-msvc'
         run: yarn config set supportedArchitectures.cpu "ia32"
         shell: bash
-      - name: install libssl-dev
-        if: matrix.settings.target == 'x86_64-unknown-linux-gnu'
-        run: sudo apt install libssl-dev
       - name: Install dependencies
         run: yarn install
       - name: Setup node x86
