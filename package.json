@@ -4,7 +4,7 @@
     "type": "git",
     "url": "https://github.com/holochain/hc-spin-rust-utils"
   },
-  "version": "0.200.2",
+  "version": "0.100.0",
   "main": "index.js",
   "types": "index.d.ts",
   "napi": {
