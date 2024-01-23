@@ -37,6 +37,12 @@ jobs:
             target: x86_64-unknown-linux-gnu
             docker: ghcr.io/napi-rs/napi-rs/nodejs-rust:lts-debian
             build: |-
+              sudo apt-get install curl -y;
+              curl -O https://go.dev/dl/go1.21.6.linux-amd64.tar.gz
+              shasum -a 256 go1.21.6.linux-amd64.tar.gz
+              sudo tar -C /usr/local -xzf go1.21.6.linux-amd64.tar.gz
+              export PATH=$PATH:/usr/local/go/bin
+              go version
               apt-get install pkg-config libssl-dev -y;
               export OPENSSL_LIB_DIR="/usr/lib/x86_64-linux-gnu";
               export OPENSSL_INCLUDE="/usr/include/openssl";
