@@ -37,7 +37,7 @@ jobs:
             target: x86_64-unknown-linux-gnu
             docker: ghcr.io/napi-rs/napi-rs/nodejs-rust:lts-debian
             build: |-
-              sudo apt-get install libssl-dev
+              sudo apt-get install -y libssl-dev
               set -e &&
               yarn build --target x86_64-unknown-linux-gnu &&
               strip *.node
