@@ -152,6 +152,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: install libssl-dev
+        run: sudo apt install libssl-dev
       - name: Setup node
         uses: actions/setup-node@v4
         with:
