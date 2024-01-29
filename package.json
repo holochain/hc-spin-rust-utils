@@ -9,7 +9,11 @@
   "types": "index.d.ts",
   "napi": {
     "name": "hc-spin-rust-utils",
-    "triples": {}
+    "triples": {
+      "additional": [
+        "aarch64-apple-darwin"
+      ]
+    }
   },
   "license": "MIT",
   "devDependencies": {
