@@ -1,0 +1,23 @@
+{
+  "name": "@holochain/hc-spin-rust-utils-darwin-arm64",
+  "version": "0.100.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/holochain/hc-spin-rust-utils",
+    "directory": "npm/darwin-arm64"
+  },
+  "os": [
+    "darwin"
+  ],
+  "cpu": [
+    "arm64"
+  ],
+  "main": "hc-spin-rust-utils.darwin-arm64.node",
+  "files": [
+    "hc-spin-rust-utils.darwin-arm64.node"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">= 10"
+  }
+}
