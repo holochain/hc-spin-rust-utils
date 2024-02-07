@@ -13,7 +13,7 @@ holochain_types = "0.3.0-beta-dev.33"
 holochain_zome_types = "0.3.0-beta-dev.27"
 holo_hash = "0.3.0-beta-dev.22"
 kitsune_p2p_timestamp = "0.3.0-beta-dev.7"
-lair_keystore_api = "0.4.2"
+lair_keystore_api = "0.4.3"
 
 hex = "0.4.3"
 futures = "0.3"
@@ -28,7 +28,6 @@ napi = { version = "2.12.2", default-features = false, features = [
 napi-derive = "2.12.2"
 serde = { version = "1.0", features = ["derive"] }
 serde_yaml = "0.8"
-sodoken = "0.0.9"
 url = "2.2"
 url2 = "0.0.6"
 zip = "0.5.0"
