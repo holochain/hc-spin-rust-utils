@@ -121,7 +121,7 @@ dist
 .AppleDouble
 .LSOverride
 
-# Icon must end with two 
+# Icon must end with two
 Icon
 
 
@@ -184,7 +184,7 @@ $RECYCLE.BIN/
 #Added by cargo
 
 /target
-Cargo.lock
+# Cargo.lock
 
 .pnp.*
 .yarn/*
