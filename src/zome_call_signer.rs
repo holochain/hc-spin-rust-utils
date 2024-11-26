@@ -2,14 +2,13 @@
 
 use std::ops::Deref;
 
-use holochain_zome_types::prelude::{Signature, ZomeCallUnsigned};
+use holo_hash::AgentPubKey;
+use holochain_zome_types::prelude::Signature;
 use lair_keystore_api::{
   dependencies::sodoken::BufRead, dependencies::url::Url, ipc_keystore::ipc_keystore_connect,
   LairClient,
 };
 use napi::Result;
-
-use crate::types::*;
 
 struct ZomeCallSigner {
   lair_client: LairClient,
@@ -29,38 +28,20 @@ impl ZomeCallSigner {
   }
 
   /// Sign a zome call
-  pub async fn sign_zome_call(
-    &self,
-    zome_call_unsigned_js: ZomeCallUnsignedNapi,
-  ) -> Result<ZomeCallNapi> {
-    let zome_call_unsigned: ZomeCallUnsigned = zome_call_unsigned_js.clone().into();
-    let pub_key = zome_call_unsigned.provenance.clone();
+  pub async fn sign_zome_call(&self, payload: Vec<u8>, pub_key: Vec<u8>) -> Result<Vec<u8>> {
+    let pub_key = AgentPubKey::from_raw_39(pub_key);
     let mut pub_key_2 = [0; 32];
     pub_key_2.copy_from_slice(pub_key.get_raw_32());
 
-    let data_to_sign = zome_call_unsigned.data_to_sign().unwrap();
-
     let sig = self
       .lair_client
-      .sign_by_pub_key(pub_key_2.into(), None, data_to_sign)
+      .sign_by_pub_key(pub_key_2.into(), None, payload.into())
       .await
       .unwrap();
 
     let signature = Signature(*sig.0);
 
-    let signed_zome_call = ZomeCallNapi {
-      cell_id: zome_call_unsigned_js.cell_id,
-      zome_name: zome_call_unsigned.zome_name.to_string(),
-      fn_name: zome_call_unsigned.fn_name.0,
-      payload: zome_call_unsigned_js.payload,
-      cap_secret: zome_call_unsigned_js.cap_secret,
-      provenance: zome_call_unsigned_js.provenance,
-      nonce: zome_call_unsigned_js.nonce,
-      expires_at: zome_call_unsigned_js.expires_at,
-      signature: signature.0.to_vec(),
-    };
-
-    Ok(signed_zome_call)
+    Ok(signature.0.to_vec())
   }
 }
 
@@ -88,15 +69,12 @@ impl JsZomeCallSigner {
   }
 
   #[napi]
-  pub async fn sign_zome_call(
-    &self,
-    zome_call_unsigned_js: ZomeCallUnsignedNapi,
-  ) -> Result<ZomeCallNapi> {
+  pub async fn sign_zome_call(&self, payload: Vec<u8>, pub_key: Vec<u8>) -> Result<Vec<u8>> {
     self
       .zome_call_signer
       .as_ref()
       .unwrap()
-      .sign_zome_call(zome_call_unsigned_js)
+      .sign_zome_call(payload, pub_key)
       .await
   }
 }
