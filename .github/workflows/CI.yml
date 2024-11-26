@@ -9,7 +9,7 @@ permissions:
 'on':
   push:
     branches:
-      - main
+      - holochain-0.4
     tags-ignore:
       - '**'
     paths-ignore:
