@@ -9,7 +9,7 @@ permissions:
 'on':
   push:
     branches:
-      - holochain-0.3
+      - sysinfo-reproduce
     tags-ignore:
       - '**'
     paths-ignore:
