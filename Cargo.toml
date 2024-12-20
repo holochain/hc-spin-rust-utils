@@ -8,11 +8,11 @@ crate-type = ["cdylib"]
 
 [dependencies]
 # We keep those holochain dependencies separate from the root project to avoid irrelevant incompatibilities
-holochain_integrity_types = "0.4.0-rc.0"
-holochain_types = "0.4.0-rc.2"
-holochain_zome_types = "0.4.0-rc.1"
-holo_hash = "0.4.0-rc.0"
-kitsune_p2p_timestamp = "0.4.0-rc.0"
+holochain_integrity_types = "0.4.0"
+holochain_types = "0.4.0"
+holochain_zome_types = "0.4.0"
+holo_hash = "0.4.0"
+kitsune_p2p_timestamp = "0.4.0"
 lair_keystore_api = "0.5.3"
 
 hex = "0.4.3"
