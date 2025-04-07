@@ -1,14 +1,12 @@
 #![deny(clippy::all)]
 
-use std::ops::Deref;
-
 use holo_hash::AgentPubKey;
 use holochain_zome_types::prelude::Signature;
-use lair_keystore_api::{
-  dependencies::sodoken::BufRead, dependencies::url::Url, ipc_keystore::ipc_keystore_connect,
-  LairClient,
-};
+use lair_keystore_api::dependencies::sodoken;
+use lair_keystore_api::{dependencies::url::Url, ipc_keystore::ipc_keystore_connect, LairClient};
 use napi::Result;
+use std::ops::Deref;
+use std::sync::{Arc, Mutex};
 
 struct ZomeCallSigner {
   lair_client: LairClient,
@@ -18,9 +16,11 @@ impl ZomeCallSigner {
   /// Connect to lair keystore
   pub async fn new(connection_url: String, passphrase: String) -> Self {
     let connection_url_parsed = Url::parse(connection_url.deref()).unwrap();
-    let passphrase_bufread: BufRead = passphrase.as_bytes().into();
+    let passphrase_locked_read = Arc::new(Mutex::new(sodoken::LockedArray::from(
+      passphrase.as_bytes().to_vec(),
+    )));
 
-    let lair_client = ipc_keystore_connect(connection_url_parsed, passphrase_bufread)
+    let lair_client = ipc_keystore_connect(connection_url_parsed, passphrase_locked_read)
       .await
       .unwrap();
 
