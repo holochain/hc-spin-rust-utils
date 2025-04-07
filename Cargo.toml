@@ -1,19 +1,19 @@
 [package]
 edition = "2021"
 name = "hc-spin-rust-utils"
-version = "0.500.0-dev.1"
+version = "0.500.0-rc.0"
 
 [lib]
 crate-type = ["cdylib"]
 
 [dependencies]
 # We keep those holochain dependencies separate from the root project to avoid irrelevant incompatibilities
-holochain_integrity_types = "0.5.0-dev.12"
-holochain_types = "0.5.0-dev.21"
-holochain_zome_types = "0.5.0-dev.17"
-holo_hash = "0.5.0-dev.7"
-kitsune_p2p_timestamp = "0.5.0-dev.1"
-lair_keystore_api = "0.5.3"
+holochain_integrity_types = "0.5.0-rc.0"
+holochain_types = "0.5.0-rc.0"
+holochain_zome_types = "0.5.0-rc.0"
+holo_hash = "0.5.0-rc.0"
+kitsune_p2p_timestamp = "0.5.0-rc.0"
+lair_keystore_api = "0.6.1"
 
 hex = "0.4.3"
 futures = "0.3"
