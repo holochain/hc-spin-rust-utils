@@ -8,10 +8,10 @@ crate-type = ["cdylib"]
 
 [dependencies]
 # We keep those holochain dependencies separate from the root project to avoid irrelevant incompatibilities
-holochain_integrity_types = "0.5.0-rc.1"
-holochain_types = "0.5.0-rc.3"
-holochain_zome_types = "0.5.0-rc.1"
-holo_hash = "0.5.0-rc.1"
+holochain_integrity_types = "0.5.0"
+holochain_types = "0.5.0"
+holochain_zome_types = "0.5.0"
+holo_hash = "0.5.0"
 lair_keystore_api = "0.6.1"
 
 hex = "0.4.3"
