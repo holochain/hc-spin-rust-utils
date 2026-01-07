@@ -3,7 +3,7 @@ use std::fs;
 use std::path::PathBuf;
 
 #[napi]
-pub async fn save_happ_or_webhapp(
+pub async fn unpack_and_save_webhapp(
   happ_or_web_happ_path: String,
   app_id: String,
   uis_dir: String,
