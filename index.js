@@ -224,32 +224,17 @@ switch (platform) {
         }
         break
       case 'arm':
-        if (isMusl()) {
-          localFileExisted = existsSync(
-            join(__dirname, 'hc-spin-rust-utils.linux-arm-musleabihf.node')
-          )
-          try {
-            if (localFileExisted) {
-              nativeBinding = require('./hc-spin-rust-utils.linux-arm-musleabihf.node')
-            } else {
-              nativeBinding = require('@holochain/hc-spin-rust-utils-linux-arm-musleabihf')
-            }
-          } catch (e) {
-            loadError = e
+        localFileExisted = existsSync(
+          join(__dirname, 'hc-spin-rust-utils.linux-arm-gnueabihf.node')
+        )
+        try {
+          if (localFileExisted) {
+            nativeBinding = require('./hc-spin-rust-utils.linux-arm-gnueabihf.node')
+          } else {
+            nativeBinding = require('@holochain/hc-spin-rust-utils-linux-arm-gnueabihf')
           }
-        } else {
-          localFileExisted = existsSync(
-            join(__dirname, 'hc-spin-rust-utils.linux-arm-gnueabihf.node')
-          )
-          try {
-            if (localFileExisted) {
-              nativeBinding = require('./hc-spin-rust-utils.linux-arm-gnueabihf.node')
-            } else {
-              nativeBinding = require('@holochain/hc-spin-rust-utils-linux-arm-gnueabihf')
-            }
-          } catch (e) {
-            loadError = e
-          }
+        } catch (e) {
+          loadError = e
         }
         break
       case 'riscv64':
@@ -310,7 +295,7 @@ if (!nativeBinding) {
   throw new Error(`Failed to load native binding`)
 }
 
-const { saveHappOrWebhapp, ZomeCallSigner } = nativeBinding
+const { unpackAndSaveWebhapp, ZomeCallSigner } = nativeBinding
 
-module.exports.saveHappOrWebhapp = saveHappOrWebhapp
+module.exports.unpackAndSaveWebhapp = unpackAndSaveWebhapp
 module.exports.ZomeCallSigner = ZomeCallSigner
