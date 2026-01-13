@@ -14,7 +14,7 @@ At the time of writing it contains two main pieces:
 
 To release a new version of `@holochain/hc-spin-rust-utils`, you may proceed as follows:
 
-1. Update the crates in Cargo.toml as necessary and make any required changes in case of compilation errors.
+1. Update the crates in Cargo.toml as necessary and make any required changes in case of compilation errors. Do NOT change the package version in package.json. This will be done automatically in step 4 as part of the `npm version` command.
 2. (optional but recommended) Test the package locally by
     1. Building it: `npm run build`
     2. Linking it globally with yarn: `yarn link`
