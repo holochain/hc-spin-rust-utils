@@ -18,7 +18,15 @@ permissions:
       - "**/*.gitignore"
       - .editorconfig
       - docs/**
-  pull_request: null
+  pull_request:
+    branches:
+      - main
+    paths-ignore:
+      - "**/*.md"
+      - LICENSE
+      - "**/*.gitignore"
+      - .editorconfig
+      - docs/**
 jobs:
   build:
     strategy:
