@@ -1,6 +1,6 @@
 {
   "name": "@holochain/hc-spin-rust-utils-darwin-arm64",
-  "version": "0.600.0",
+  "version": "0.601.1-rc.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/holochain/hc-spin-rust-utils",
