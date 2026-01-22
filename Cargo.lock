@@ -916,7 +916,7 @@ dependencies = [
 
 [[package]]
 name = "hc-spin-rust-utils"
-version = "0.600.1-rc.0"
+version = "0.601.1-rc.0"
 dependencies = [
  "holo_hash",
  "holochain_integrity_types",
