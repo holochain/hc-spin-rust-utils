@@ -1,7 +1,7 @@
 [package]
 edition = "2021"
 name = "hc-spin-rust-utils"
-version = "0.601.3"
+version = "0.601.5"
 
 [lib]
 crate-type = ["cdylib"]

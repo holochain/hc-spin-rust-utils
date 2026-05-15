@@ -4,7 +4,7 @@
     "type": "git",
     "url": "https://github.com/holochain/hc-spin-rust-utils"
   },
-  "version": "0.601.4",
+  "version": "0.601.5",
   "main": "index.js",
   "types": "index.d.ts",
   "napi": {
@@ -35,12 +35,5 @@
     "test": "ava",
     "universal": "napi universal",
     "version": "napi version"
-  },
-  "optionalDependencies": {
-    "@holochain/hc-spin-rust-utils-win32-x64-msvc": "0.601.4",
-    "@holochain/hc-spin-rust-utils-darwin-x64": "0.601.4",
-    "@holochain/hc-spin-rust-utils-linux-x64-gnu": "0.601.4",
-    "@holochain/hc-spin-rust-utils-darwin-arm64": "0.601.4",
-    "@holochain/hc-spin-rust-utils-linux-arm64-gnu": "0.601.4"
   }
 }
