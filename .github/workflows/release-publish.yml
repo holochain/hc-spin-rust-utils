@@ -50,6 +50,11 @@ jobs:
       - name: Assemble artifacts
         run: yarn artifacts
 
+      - name: Configure npm auth
+        run: npm config set //registry.npmjs.org/:_authToken "$NPM_TOKEN"
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       - uses: holochain/actions/nodejs-publish@split-nodejs-workflow-into-actions
         with:
           npm_token: ${{ secrets.NPM_TOKEN }}
