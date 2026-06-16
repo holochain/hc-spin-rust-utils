@@ -8,6 +8,7 @@ env:
   pull_request:
     branches:
       - main
+      - main-*
     paths-ignore:
       - "**/*.md"
       - LICENSE
