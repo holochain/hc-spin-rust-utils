@@ -41,7 +41,7 @@ jobs:
         with:
           path: artifacts
 
-      - uses: holochain/actions/nodejs-setup@split-nodejs-workflow-into-actions
+      - uses: holochain/actions/nodejs-setup@v1.14.0
         with:
           package_manager: yarn
           cache: false
@@ -50,4 +50,4 @@ jobs:
       - name: Assemble artifacts
         run: yarn artifacts
 
-      - uses: holochain/actions/nodejs-publish@split-nodejs-workflow-into-actions
+      - uses: holochain/actions/nodejs-publish@v1.14.0
