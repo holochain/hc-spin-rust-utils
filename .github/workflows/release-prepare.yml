@@ -8,6 +8,10 @@ on:
         required: false
         type: string
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   prepare:
     uses: holochain/actions/.github/workflows/nodejs-prepare-release.yml@v1.14.0
@@ -17,4 +21,4 @@ jobs:
       package_manager: yarn
       install_deps: true
     secrets:
-      GH_TOKEN: ${{ secrets.HRA2_GITHUB_TOKEN }}
+      GH_TOKEN: ${{ github.token }}
