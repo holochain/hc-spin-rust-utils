@@ -47,22 +47,6 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Other Changes
 
-- 0.700.0-dev.0 by @matthme
-- Merge pull request #8 from holochain/bump-0.7.0-dev by @matthme in [#8](https://github.com/holochain/hc-spin-rust-utils/pull/8)
-- Merge pull request #7 from holochain/docs/maintenance-instructions by @matthme in [#7](https://github.com/holochain/hc-spin-rust-utils/pull/7)
-
-## \[[0.700.0-dev.0](https://github.com/holochain/hc-spin-rust-utils/compare/v0.600.0...v0.700.0-dev.0)\] - 2026-01-13
-
-### Features
-
-- Bump to holochain 0.7.0-dev.7 by @matthme
-
-### Documentation
-
-- Add maintenance instructions by @matthme
-
-### Other Changes
-
 - Merge pull request #8 from holochain/bump-0.7.0-dev by @matthme in [#8](https://github.com/holochain/hc-spin-rust-utils/pull/8)
 - Merge pull request #7 from holochain/docs/maintenance-instructions by @matthme in [#7](https://github.com/holochain/hc-spin-rust-utils/pull/7)
 
