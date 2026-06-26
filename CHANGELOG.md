@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## \[[0.700.0-dev.3](https://github.com/holochain/hc-spin-rust-utils/compare/v0.700.0-dev.2...v0.700.0-dev.3)\] - 2026-06-26
+
+### Miscellaneous Tasks
+
+- Compatible version of ava by @ThetaSinner
+- Update npm deps by @ThetaSinner
+- Update dependencies for Rust lib by @ThetaSinner
+
+### CI
+
+- Update node and actions by @ThetaSinner
+
+### Other Changes
+
+- Merge pull request #21 from holochain/update-rust-dependencies by @ThetaSinner in [#21](https://github.com/holochain/hc-spin-rust-utils/pull/21)
+
+### First-time Contributors
+
+- @ThetaSinner made their first contribution in [#21](https://github.com/holochain/hc-spin-rust-utils/pull/21)
+
 ## \[[0.700.0-dev.2](https://github.com/holochain/hc-spin-rust-utils/compare/v0.700.0-dev.0...v0.700.0-dev.2)\] - 2026-06-18
 
 ### Miscellaneous Tasks
