@@ -8,28 +8,21 @@ crate-type = ["cdylib"]
 
 [dependencies]
 # We keep those holochain dependencies separate from the root project to avoid irrelevant incompatibilities
-holochain_integrity_types = "0.7.0-dev.4"
-holochain_types = "0.7.0-dev.7"
-holochain_zome_types = "0.7.0-dev.4"
-holo_hash = "0.7.0-dev.3"
-lair_keystore_api = "0.6.3"
+holochain_types = "0.7.0-dev.29"
+holochain_zome_types = "0.7.0-dev.18"
+holo_hash = "0.7.0-dev.9"
+lair_keystore_api = "0.7.1"
 
-hex = "0.4.3"
-futures = "0.3"
-nanoid = "0.4.0"
-# Default enable napi4 feature, see https://nodejs.org/api/n-api.html#node-api-version-matrix
-napi = { version = "2.12.2", default-features = false, features = [
-  "napi4",
+# Default enable napi9 feature, see https://nodejs.org/api/n-api.html#node-api-version-matrix
+napi = { version = "3.9.4", default-features = false, features = [
+  "napi9",
   "tokio_rt",
   "async",
   "serde-json",
 ] }
-napi-derive = "2.12.2"
-serde = { version = "1.0", features = ["derive"] }
-serde_yaml = "0.8"
+napi-derive = "3.5.7"
 url = "2.2"
-url2 = "0.0.6"
-zip = "0.5.0"
+zip = "8.6.0"
 
 [build-dependencies]
 napi-build = "2.0.1"

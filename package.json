@@ -18,14 +18,14 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@napi-rs/cli": "^2.16.5",
-    "ava": "^5.1.1"
+    "@napi-rs/cli": "^3.7.2",
+    "ava": "^7.0.0"
   },
   "ava": {
     "timeout": "3m"
   },
   "engines": {
-    "node": ">= 10"
+    "node": ">= 20"
   },
   "scripts": {
     "artifacts": "napi artifacts",
