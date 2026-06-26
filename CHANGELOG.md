@@ -16,6 +16,39 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 - Release v0.700.0-dev.3 by @ThetaSinner
 - Release v0.700.0-dev.3 by @ThetaSinner
+- Release v0.700.0-dev.3 by @ThetaSinner
+- Compatible version of ava by @ThetaSinner
+- Update npm deps by @ThetaSinner
+- Update dependencies for Rust lib by @ThetaSinner
+
+### CI
+
+- Update node and actions by @ThetaSinner
+
+### Other Changes
+
+- Merge pull request #25 from holochain/automated-release-0.700.0-dev.3 by @ThetaSinner in [#25](https://github.com/holochain/hc-spin-rust-utils/pull/25)
+- Merge pull request #24 from holochain/automated-release-0.700.0-dev.3 by @ThetaSinner in [#24](https://github.com/holochain/hc-spin-rust-utils/pull/24)
+- Merge pull request #23 from holochain/fix/napi-v3-targets-config by @ThetaSinner in [#23](https://github.com/holochain/hc-spin-rust-utils/pull/23)
+- Merge pull request #22 from holochain/automated-release-0.700.0-dev.3 by @ThetaSinner in [#22](https://github.com/holochain/hc-spin-rust-utils/pull/22)
+- Merge pull request #21 from holochain/update-rust-dependencies by @ThetaSinner in [#21](https://github.com/holochain/hc-spin-rust-utils/pull/21)
+
+### First-time Contributors
+
+- @ThetaSinner made their first contribution in [#25](https://github.com/holochain/hc-spin-rust-utils/pull/25)
+
+## \[[0.700.0-dev.3](https://github.com/holochain/hc-spin-rust-utils/compare/v0.700.0-dev.2...v0.700.0-dev.3)\] - 2026-06-26
+
+### Bug Fixes
+
+- Migrate napi config to v3 targets format by @ThetaSinner
+  - The @napi-rs/cli bump to v3 changed how the legacy `napi.triples` config is read: the default host targets are now only included when `triples.defaults` is explicitly set. With only `triples.additional` configured, `napi artifacts` resolved just the two aarch64 targets and failed with "No dist dir found" for the x86_64 binaries, breaking the publish job.
+  - Migrate to the v3 `binaryName` + `targets` format, listing all five build-matrix targets explicitly. Also clears the [DEPRECATED] warnings.
+
+### Miscellaneous Tasks
+
+- Release v0.700.0-dev.3 by @ThetaSinner
+- Release v0.700.0-dev.3 by @ThetaSinner
 - Compatible version of ava by @ThetaSinner
 - Update npm deps by @ThetaSinner
 - Update dependencies for Rust lib by @ThetaSinner
