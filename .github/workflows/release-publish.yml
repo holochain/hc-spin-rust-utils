@@ -1,0 +1,56 @@
+name: Publish Release
+
+on:
+  push:
+    branches: [main, main-*]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      is-release: ${{ steps.label.outputs.result }}
+    steps:
+      - name: Check for hra-release label on merged PR
+        id: label
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          RESULT=$(gh api repos/${{ github.repository }}/commits/${{ github.sha }}/pulls \
+            --jq 'any(.[].labels[].name; . == "hra-release")' 2>/dev/null || echo "false")
+          echo "result=$RESULT" >> "$GITHUB_OUTPUT"
+
+  build:
+    needs: check
+    if: needs.check.outputs.is-release == 'true'
+    uses: ./.github/workflows/CI.yml
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - uses: holochain/actions/nodejs-setup@v1.14.0
+        with:
+          package_manager: yarn
+          cache: false
+          install_deps: true
+
+      - name: Assemble artifacts
+        run: yarn artifacts
+
+      - uses: holochain/actions/nodejs-publish@v1.14.0
