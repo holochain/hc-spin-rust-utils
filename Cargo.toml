@@ -8,9 +8,9 @@ crate-type = ["cdylib"]
 
 [dependencies]
 # We keep those holochain dependencies separate from the root project to avoid irrelevant incompatibilities
-holochain_types = "0.7.0-dev.29"
-holochain_zome_types = "0.7.0-dev.18"
-holo_hash = "0.7.0-dev.9"
+holochain_types = "0.7.0-rc.1"
+holochain_zome_types = "0.7.0-rc.1"
+holo_hash = "0.7.0-rc.1"
 lair_keystore_api = "0.7.1"
 
 # Default enable napi9 feature, see https://nodejs.org/api/n-api.html#node-api-version-matrix

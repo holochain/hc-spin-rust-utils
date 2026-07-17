@@ -50,6 +50,12 @@ pub struct JsZomeCallSigner {
   zome_call_signer: Option<ZomeCallSigner>,
 }
 
+impl Default for JsZomeCallSigner {
+  fn default() -> Self {
+    Self::new()
+  }
+}
+
 #[napi]
 impl JsZomeCallSigner {
   #[napi(constructor)]
