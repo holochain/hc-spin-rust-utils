@@ -23,7 +23,7 @@ pub async fn unpack_and_save_webhapp(
         fs::create_dir_all(&ui_target_dir)?;
       }
 
-      let ui_zip_path = PathBuf::from(ui_target_dir.clone()).join("ui.zip");
+      let ui_zip_path = ui_target_dir.join("ui.zip");
 
       // unzip and store UI
       fs::write::<PathBuf, Vec<u8>>(ui_zip_path.clone(), web_ui_zip_bytes.into())
@@ -32,7 +32,7 @@ pub async fn unpack_and_save_webhapp(
       let file = fs::File::open(ui_zip_path.clone())
         .map_err(|e| napi::Error::from_reason(format!("Failed to read Web UI Zip file: {}", e)))?;
 
-      unzip_file(file, ui_target_dir.into())
+      unzip_file(file, ui_target_dir)
         .map_err(|e| napi::Error::from_reason(format!("Failed to unzip ui.zip: {}", e)))?;
 
       fs::remove_file(ui_zip_path).map_err(|e| {
@@ -90,12 +90,12 @@ pub fn unzip_file(reader: fs::File, outpath: PathBuf) -> Result<(), String> {
       None => continue,
     };
 
-    if (&*file.name()).ends_with('/') {
+    if file.name().ends_with('/') {
       fs::create_dir_all(&outpath).unwrap();
     } else {
       if let Some(p) = outpath.parent() {
         if !p.exists() {
-          fs::create_dir_all(&p).unwrap();
+          fs::create_dir_all(p).unwrap();
         }
       }
       let mut outfile = fs::File::create(&outpath).unwrap();
