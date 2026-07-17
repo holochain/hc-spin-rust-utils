@@ -77,29 +77,29 @@ pub fn path_exists(path: &PathBuf) -> bool {
   std::path::Path::new(path).exists()
 }
 
-pub fn unzip_file(reader: fs::File, outpath: PathBuf) -> Result<(), String> {
+pub fn unzip_file(reader: fs::File, outpath: PathBuf) -> std::io::Result<()> {
   let mut archive = match zip::ZipArchive::new(reader) {
     Ok(a) => a,
-    Err(e) => return Err(format!("Failed to unpack zip archive: {}", e)),
+    Err(e) => return Err(std::io::Error::other(format!("Failed to unpack zip archive: {}", e))),
   };
 
   for i in 0..archive.len() {
-    let mut file = archive.by_index(i).unwrap();
+    let mut file = archive.by_index(i)?;
     let outpath = match file.enclosed_name() {
       Some(path) => outpath.join(path).to_owned(),
       None => continue,
     };
 
     if file.name().ends_with('/') {
-      fs::create_dir_all(&outpath).unwrap();
+      fs::create_dir_all(&outpath)?;
     } else {
       if let Some(p) = outpath.parent() {
         if !p.exists() {
-          fs::create_dir_all(p).unwrap();
+          fs::create_dir_all(p)?;
         }
       }
-      let mut outfile = fs::File::create(&outpath).unwrap();
-      std::io::copy(&mut file, &mut outfile).unwrap();
+      let mut outfile = fs::File::create(&outpath)?;
+      std::io::copy(&mut file, &mut outfile)?;
     }
   }
 
