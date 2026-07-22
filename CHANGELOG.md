@@ -4,6 +4,112 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## \[[0.700.0-rc.1](https://github.com/holochain/hc-spin-rust-utils/compare/v0.700.0-rc.0...v0.700.0-rc.1)\] - 2026-07-22
+
+### Features
+
+- Update to Holochain 0.7.0-rc.3 by @ThetaSinner in [#37](https://github.com/holochain/hc-spin-rust-utils/pull/37)
+
+## \[[0.700.0-rc.0](https://github.com/holochain/hc-spin-rust-utils/compare/v0.700.0-dev.3...v0.700.0-rc.0)\] - 2026-07-17
+
+### Features
+
+- Upgrade to Holochain 0.7.0-rc.1 by @ThetaSinner
+
+### Miscellaneous Tasks
+
+- Release v0.700.0-rc.0 by @ThetaSinner in [#33](https://github.com/holochain/hc-spin-rust-utils/pull/33)
+- Improve error handling when unzipping a bundle by @ThetaSinner in [#31](https://github.com/holochain/hc-spin-rust-utils/pull/31)
+
+### CI
+
+- Provide perl on Windows by @ThetaSinner
+- Add ci_pass job by @ThetaSinner
+
+## \[[0.700.0-dev.3](https://github.com/holochain/hc-spin-rust-utils/compare/v0.700.0-dev.2...v0.700.0-dev.3)\] - 2026-06-26
+
+### Bug Fixes
+
+- Migrate napi config to v3 targets format by @ThetaSinner
+  - The @napi-rs/cli bump to v3 changed how the legacy `napi.triples` config is read: the default host targets are now only included when `triples.defaults` is explicitly set. With only `triples.additional` configured, `napi artifacts` resolved just the two aarch64 targets and failed with "No dist dir found" for the x86_64 binaries, breaking the publish job.
+  - Migrate to the v3 `binaryName` + `targets` format, listing all five build-matrix targets explicitly. Also clears the [DEPRECATED] warnings.
+
+### Miscellaneous Tasks
+
+- Release v0.700.0-dev.3 by @ThetaSinner
+- Release v0.700.0-dev.3 by @ThetaSinner
+- Release v0.700.0-dev.3 by @ThetaSinner
+- Release v0.700.0-dev.3 by @ThetaSinner
+- Compatible version of ava by @ThetaSinner
+- Update npm deps by @ThetaSinner
+- Update dependencies for Rust lib by @ThetaSinner
+
+### CI
+
+- Update node and actions by @ThetaSinner
+
+### Other Changes
+
+- Merge pull request #26 from holochain/automated-release-0.700.0-dev.3 by @ThetaSinner in [#26](https://github.com/holochain/hc-spin-rust-utils/pull/26)
+- Merge pull request #25 from holochain/automated-release-0.700.0-dev.3 by @ThetaSinner in [#25](https://github.com/holochain/hc-spin-rust-utils/pull/25)
+- Merge pull request #24 from holochain/automated-release-0.700.0-dev.3 by @ThetaSinner in [#24](https://github.com/holochain/hc-spin-rust-utils/pull/24)
+- Merge pull request #23 from holochain/fix/napi-v3-targets-config by @ThetaSinner in [#23](https://github.com/holochain/hc-spin-rust-utils/pull/23)
+- Merge pull request #22 from holochain/automated-release-0.700.0-dev.3 by @ThetaSinner in [#22](https://github.com/holochain/hc-spin-rust-utils/pull/22)
+- Merge pull request #21 from holochain/update-rust-dependencies by @ThetaSinner in [#21](https://github.com/holochain/hc-spin-rust-utils/pull/21)
+
+### First-time Contributors
+
+- @ThetaSinner made their first contribution in [#26](https://github.com/holochain/hc-spin-rust-utils/pull/26)
+
+## \[[0.700.0-dev.2](https://github.com/holochain/hc-spin-rust-utils/compare/v0.700.0-dev.0...v0.700.0-dev.2)\] - 2026-06-18
+
+### Miscellaneous Tasks
+
+- Release v0.700.0-dev.2 by @cdunster
+- Bump versions to dev.1 as that was used for testing by @cdunster
+  - The version is unpublished/deprecated and shouldn't be used but the version number still can't be reused.
+
+### CI
+
+- Reduce permissions for non-publish jobs in publish workflow by @cdunster in [#17](https://github.com/holochain/hc-spin-rust-utils/pull/17)
+- Run PR workflow with `main-*` as base as well as `main` by @cdunster
+- Support releasing on `main-*` branches by @cdunster
+- Use holochain/actions release instead of the branch for this work by @cdunster
+- Use Trusted Publishers for publishing instead of token by @cdunster
+- Add step to add NPM_TOKEN to registry by @cdunster
+- Add a workflow to publish a prepared release by @cdunster
+- Add a workflow to prepare a release and open a PR for it by @cdunster
+- Remove publishing trigger and job from general CI workflow by @cdunster
+- Remove the build in docker dead code by @cdunster
+
+### Documentation
+
+- Remove repeated changelog entry by @cdunster in [#20](https://github.com/holochain/hc-spin-rust-utils/pull/20)
+- Add missing changelog by @cdunster in [#18](https://github.com/holochain/hc-spin-rust-utils/pull/18)
+- Update the Holochain support and release process in the README by @cdunster
+- Remove the section about updating the NPM token by @cdunster
+  - We now use Trusted Publishers.
+
+### First-time Contributors
+
+- @cdunster made their first contribution in [#20](https://github.com/holochain/hc-spin-rust-utils/pull/20)
+
+## \[[0.700.0-dev.0](https://github.com/holochain/hc-spin-rust-utils/compare/v0.600.0...v0.700.0-dev.0)\] - 2026-01-13
+
+### Features
+
+- Bump to holochain 0.7.0-dev.7 by @matthme
+
+### Documentation
+
+- Add maintenance instructions by @matthme
+
+### Other Changes
+
+- 0.700.0-dev.0 by @matthme
+- Merge pull request #8 from holochain/bump-0.7.0-dev by @matthme in [#8](https://github.com/holochain/hc-spin-rust-utils/pull/8)
+- Merge pull request #7 from holochain/docs/maintenance-instructions by @matthme in [#7](https://github.com/holochain/hc-spin-rust-utils/pull/7)
+
 ## \[[0.700.0-rc.0](https://github.com/holochain/hc-spin-rust-utils/compare/v0.700.0-dev.3...v0.700.0-rc.0)\] - 2026-07-17
 
 ### Features
