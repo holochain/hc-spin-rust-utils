@@ -47,14 +47,14 @@ jobs:
               yarn build --target aarch64-unknown-linux-gnu &&
               strip *.node
 
-    name: stable - ${{ matrix.settings.target }} - node@20
+    name: stable - ${{ matrix.settings.target }} - node@24
     runs-on: ${{ matrix.settings.host }}
     steps:
       - uses: actions/checkout@v7
       - name: Setup node
         uses: actions/setup-node@v7
         with:
-          node-version: 20
+          node-version: 24
           cache: yarn
       - name: Install
         uses: dtolnay/rust-toolchain@stable
@@ -93,7 +93,7 @@ jobs:
         uses: actions/setup-node@v7
         if: matrix.settings.target == 'i686-pc-windows-msvc'
         with:
-          node-version: 20
+          node-version: 24
           cache: yarn
           architecture: x86
       - name: Build
@@ -119,7 +119,7 @@ jobs:
             target: x86_64-pc-windows-msvc
         node:
           - "24"
-          - "22"
+          - "26"
     runs-on: ${{ matrix.settings.host }}
     steps:
       - uses: actions/checkout@v7
@@ -148,8 +148,8 @@ jobs:
       fail-fast: false
       matrix:
         node:
-          - "22"
-          - "20"
+          - "24"
+          - "26"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -169,7 +169,7 @@ jobs:
         run: ls -R .
         shell: bash
       - name: Test bindings
-        run: docker run --rm -v $(pwd):/build -w /build node:${{ matrix.node }}-slim yarn test
+        run: docker run --rm -v $(pwd):/build -w /build node:${{ matrix.node }}-slim npm test
 
   test-linux-aarch64-gnu-binding:
     name: Test bindings on aarch64-unknown-linux-gnu - node@${{ matrix.node }}
@@ -180,10 +180,15 @@ jobs:
       matrix:
         node:
           - "24"
-          - "22"
+          - "26"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+      - name: Setup node
+        uses: actions/setup-node@v7
+        with:
+          node-version: ${{ matrix.node }}
+          cache: yarn
       - name: Download artifacts
         uses: actions/download-artifact@v8
         with:
@@ -209,7 +214,7 @@ jobs:
           options: "--platform linux/arm64 -v ${{ github.workspace }}:/build -w /build"
           run: |
             set -e
-            yarn test
+            npm test
             ls -la
 
   ci_pass:
