@@ -4,6 +4,32 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## \[[0.700.0](https://github.com/holochain/hc-spin-rust-utils/compare/v0.700.0-rc.1...v0.700.0)\] - 2026-07-30
+
+### Features
+
+- Update dependencies to Holochain 0.7.0 by @ThetaSinner in [#45](https://github.com/holochain/hc-spin-rust-utils/pull/45)
+
+### Miscellaneous Tasks
+
+- Require Node.js 24 by @ThetaSinner in [#42](https://github.com/holochain/hc-spin-rust-utils/pull/42)
+
+### CI
+
+- Update node.js support to 24 (lts) by default, and test on 26 (current) by @ThetaSinner
+
+### Automated Changes
+
+- *(deps-dev)* Bump the npm group across 1 directory with 2 updates by @dependabot[bot] in [#41](https://github.com/holochain/hc-spin-rust-utils/pull/41)
+- *(deps)* Bump the updates group with 6 updates by @dependabot[bot] in [#40](https://github.com/holochain/hc-spin-rust-utils/pull/40)
+- Update dependabot.yml with shared content in [#39](https://github.com/holochain/hc-spin-rust-utils/pull/39)
+- Update CODEOWNERS with shared content in [#30](https://github.com/holochain/hc-spin-rust-utils/pull/30)
+
+### First-time Contributors
+
+- @dependabot[bot] made their first contribution in [#41](https://github.com/holochain/hc-spin-rust-utils/pull/41)
+- @ made their first contribution in [#39](https://github.com/holochain/hc-spin-rust-utils/pull/39)
+
 ## \[[0.700.0-rc.1](https://github.com/holochain/hc-spin-rust-utils/compare/v0.700.0-rc.0...v0.700.0-rc.1)\] - 2026-07-22
 
 ### Features
