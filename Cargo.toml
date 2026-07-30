@@ -1,16 +1,16 @@
 [package]
 edition = "2021"
 name = "hc-spin-rust-utils"
-version = "0.600.0"
+version = "0.0.0"
 
 [lib]
 crate-type = ["cdylib"]
 
 [dependencies]
 # We keep those holochain dependencies separate from the root project to avoid irrelevant incompatibilities
-holochain_types = "0.7.0-rc.3"
-holochain_zome_types = "0.7.0-rc.2"
-holo_hash = "0.7.0-rc.1"
+holochain_types = "0.7.0"
+holochain_zome_types = "0.7.0"
+holo_hash = "0.7.0"
 lair_keystore_api = "0.7.1"
 
 # Default enable napi9 feature, see https://nodejs.org/api/n-api.html#node-api-version-matrix
