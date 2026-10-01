@@ -188,10 +188,10 @@
     semver "^7.5.3"
     tar "^7.4.0"
 
-"@napi-rs/cli@^3.9.1":
-  version "3.9.1"
-  resolved "https://registry.yarnpkg.com/@napi-rs/cli/-/cli-3.9.1.tgz#96aa320109b40dabf5927b119b5d607328b47aff"
-  integrity sha512-2DYBrM2j4n00L+O7fKAS38q19rVQK2HXz5RxSuJgFyZrd9TrdVQFmHOfqvqqsRIRBTZmqiMqBd/yzn4X1a23DQ==
+"@napi-rs/cli@^3.10.5":
+  version "3.10.5"
+  resolved "https://registry.yarnpkg.com/@napi-rs/cli/-/cli-3.10.5.tgz#cb9fafe677a28080fa9ff306eb8b79f1c06fc944"
+  integrity sha512-GF4WXmLLQk3uQvkPuLCOSH50DN4GUKZw1zHlMDh4rRF5TWpfOj3a8DkZ2PWCTwpPDMD4ex05sAjrCEwNdukEjg==
   dependencies:
     "@inquirer/prompts" "^8.5.2"
     "@napi-rs/cross-toolchain" "^1.0.3"
@@ -201,7 +201,7 @@
     colorette "^2.0.20"
     es-toolkit "^1.47.0"
     js-yaml "^5.0.0"
-    obug "^2.1.2"
+    obug "^3.0.0"
     semver "^7.8.2"
     typanion "^3.14.0"
     typescript "^6.0.3"
@@ -1345,10 +1345,10 @@ nopt@^8.0.0:
   dependencies:
     abbrev "^3.0.0"
 
-obug@^2.1.2:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/obug/-/obug-2.1.3.tgz#c02c60f95abd603409330e767db7f2823193331e"
-  integrity sha512-9miFgM2OFba7hB+pRgvtV84pYTBaoTHohvmIgiRt6dRIzbwEOIaNaP+dIlGs2fNFoB0SeISs0Jz5WFVRid6Xyg==
+obug@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/obug/-/obug-3.0.0.tgz#2ddfc17d1c1dd8c825eebd127099da307c919299"
+  integrity sha512-5vvB5+W7ePv+p3uqxi+RcW1XAzLW0/hxt3/4X4Lc4qHudzOhmBiBwOY6DRob4WnanAEGvNcLjF+KNOufrUoEQw==
 
 p-map@^7.0.4:
   version "7.0.4"
