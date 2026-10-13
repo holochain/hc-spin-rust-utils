@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## \[[0.700.1](https://github.com/holochain/hc-spin-rust-utils/compare/v0.700.0...v0.700.1)\] - 2026-10-13
+
+### Automated Changes
+
+- *(deps-dev)* Bump @napi-rs/cli from 3.9.1 to 3.10.5 in the npm group by @dependabot[bot] in [#52](https://github.com/holochain/hc-spin-rust-utils/pull/52)
+- *(deps-dev)* Bump @napi-rs/cli from 3.8.6 to 3.9.1 in the npm group by @dependabot[bot] in [#51](https://github.com/holochain/hc-spin-rust-utils/pull/51)
+- Update dependabot.yml with shared content in [#50](https://github.com/holochain/hc-spin-rust-utils/pull/50)
+- *(deps)* Bump the updates group with 2 updates by @dependabot[bot] in [#49](https://github.com/holochain/hc-spin-rust-utils/pull/49)
+- *(deps-dev)* Bump @napi-rs/cli from 3.8.0 to 3.8.6 in the npm group by @dependabot[bot] in [#48](https://github.com/holochain/hc-spin-rust-utils/pull/48)
+- *(deps)* Bump the updates group with 2 updates by @dependabot[bot] in [#47](https://github.com/holochain/hc-spin-rust-utils/pull/47)
+
 ## \[[0.700.0](https://github.com/holochain/hc-spin-rust-utils/compare/v0.700.0-rc.1...v0.700.0)\] - 2026-07-30
 
 ### Features
