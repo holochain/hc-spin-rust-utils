@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## \[[0.700.1](https://github.com/holochain/hc-spin-rust-utils/compare/v0.700.0...v0.700.1)\] - 2026-10-13
+## \[[0.700.1-rc.2](https://github.com/holochain/hc-spin-rust-utils/compare/v0.700.0...v0.700.1-rc.2)\] - 2026-10-13
 
 ### Automated Changes
 

@@ -9,6 +9,7 @@ env:
     branches:
       - main
       - main-*
+    # Documentation-only pull requests do not trigger this workflow.
     paths-ignore:
       - "**/*.md"
       - LICENSE
